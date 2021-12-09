@@ -1,0 +1,58 @@
+{
+  "name": "router",
+  "version": "1.0.0",
+  "description": "Router",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src && prettier --check src",
+    "lint:fix": "eslint --fix src && prettier --write src",
+    "ci": "npm test && npm run lint:fix",
+    "prepare": "husky install",
+    "dev": "webpack --node-env development",
+    "build": "webpack --node-env production"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{js,css,md,json,yml}": "prettier --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodionbgd/router.git"
+  },
+  "keywords": [
+    "typescript",
+    "router",
+    "spa"
+  ],
+  "author": "Rodion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodionbgd/router/issues"
+  },
+  "homepage": "https://github.com/rodionbgd/router#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.9",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/jest": "^26.0.24",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.3",
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.4.0",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
+    "typescript": "^4.4.4"
+  }
+}
